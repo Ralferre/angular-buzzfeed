@@ -1,0 +1,36 @@
+<div class="quizz__container">
+
+    <div class="quizz_logo">
+      <img class="image_one" src="assets/images/ace.png" alt="Logo Quizz" srcset="">
+      <img class="image_two" src="assets/images/BuzzFeed_White.png" alt="Logo Quizz" srcset="" width="60%">
+      <h3></h3>
+    </div>
+  
+    <div class="quizz_birthday">
+        <h3>{{ title }}</h3>
+    </div>
+
+    <div *ngIf="!choose" class="quizz_options_day">
+        <button 
+          *ngFor="let item of birthdays; let i = index"  
+          (click)="playerSelected(item.day)"
+          class="day">{{ item.day }}</button>
+          
+    </div>
+  
+    <div 
+      *ngIf="choose"
+      class="quizz_results">
+      <h1>O Seu resultado é:</h1>
+      <p>{{result}}<p>
+    </div>
+
+    <div 
+      *ngIf="choose"
+      class="replace_test">
+      <button 
+        (click)="replaceTest(choose)"  
+        class="btn-replace-test">Refazer Teste</button>
+
+    </div>
+  </div>
